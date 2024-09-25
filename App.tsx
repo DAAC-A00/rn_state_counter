@@ -6,29 +6,29 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 
 // App 컴포넌트를 정의합니다.
 const App = () => {
-  // 상태 훅을 사용하여 countNum 상태 변수를 정의하고 초기값을 0으로 설정합니다.
-  const [countNum, setCount] = useState(0);
+  // 상태 훅을 사용하여 state 상태 변수를 정의하고 초기값을 0으로 설정합니다.
+  const [state, setState] = useState(0);
 
-  // countNum을 1 증가시키는 함수입니다.
+  // state을 1 증가시키는 함수입니다.
   const increment = () => {
-    setCount(countNum + 1);
+    setState(state + 1);
   };
 
-  // countNum을 1 감소시키는 함수입니다.
+  // state을 1 감소시키는 함수입니다.
   const decrement = () => {
-    setCount(countNum - 1);
+    setState(state - 1);
   };
 
-  // countNum을 0으로 리셋하는 함수입니다.
+  // state을 0으로 리셋하는 함수입니다.
   const reset = () => {
-    setCount(0);
+    setState(0);
   };
 
   // 컴포넌트의 UI를 반환합니다.
   return (
     <View style={styles.container}>
       {/* 현재 카운트 값을 표시하는 텍스트입니다. */}
-      <Text style={styles.counterText}>카운트: {countNum}</Text>
+      <Text style={styles.counterText}>카운트: {state}</Text>
       <View style={styles.buttonContainer}>
         {/* 증가 버튼: 클릭 시 increment 함수 호출 */}
         <Button title="증가" onPress={increment} />
